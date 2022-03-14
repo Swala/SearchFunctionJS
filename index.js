@@ -6,7 +6,10 @@ const app = express(); //The app object contains several functions for routing r
 const hostname = "127.0.0.1";
 const port = 3000;
 
-app.use(express.static(__dirname + "/frontend"))
+const searchHandler = require("./handlers/searchHandler");
+
+app.use(express.static(__dirname + "/frontend"));
+app.use(express.json());
 
 //load the app
 app.get("/", (req, res) => {
@@ -14,10 +17,12 @@ app.get("/", (req, res) => {
 });
 
 //get user input from search bar
-app.post("/search", (res, req) => {
-    console.log(req.body);
-    
-  res.send("post");
+app.post("/search", (req, res) => {
+  req.body;
+  //console.log(req.body);
+  const result = searchHandler.search(req.body.input)
+
+  res.send(result);
 });
 
 app.listen(port, hostname, () => {

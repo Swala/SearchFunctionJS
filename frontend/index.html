@@ -21,13 +21,20 @@
     <div class="wrap">
       <div class="search">
          <input type="text" class="searchTerm" id="searchinput" placeholder="What are you looking for?">
-         <button type="submit" class="searchButton">
+         <button type="submit" class="searchButton" id="search" onclick="searchFun">
            <i class="fa fa-search"></i>
         </button>
       </div>
    </div>
   
+<script>
+  var submitSearch = document.getElementById("search").addEventListener("click", searchFun);
 
+  function searchFun () {
+    console.log("submit");
+  }
+
+</script>
   
 </body>
 </html>
