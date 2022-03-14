@@ -4,22 +4,21 @@
 const res = require("express/lib/response");
 const articles = require("../assets/articles.json");
 
-const search = (inputString) => {
-  console.log("handler: " + inputString);
-
-  //Remove Null values and not of type string
-  let list = articles.filter((article) => {
-    for (let value in article) {
-      //console.log(value) //properties
-      if (typeof article[value] !== "string" && article[value] === null) {
-        //need to remove property containing null or not string
-        return false;
-      }
+//Remove Null values and not of type string
+//not working as I want to yet
+let list = articles.filter((article) => {
+  for (let value in article) {
+    //console.log(value) //properties
+    if (typeof article[value] !== "string" && article[value] === null) {
+      //need to remove property containing null or not string
+      return false;
     }
-    return true;
-  });
+  }
+  return true;
+});
 
-  console.log(list.length);
+const search = (inputString) => {
+  console.log("Input: " + inputString);
 
   function searchByValue(list, inputString) {
     return list.filter((article) =>
@@ -30,10 +29,6 @@ const search = (inputString) => {
   }
 
   return searchByValue(list, inputString);
-
-  /*articles.forEach(article => {
-        console.log(article);
-    })*/
 };
 
 module.exports = {

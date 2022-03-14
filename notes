@@ -5,6 +5,8 @@ backend node.js, javascript?
 
 3. Ladda datan från articles.json filen (till string eller array?)
 
+4. check för undefined och null 
+
 
 !!om backend strular, se till att i alla fall ha en fungerande search-funktion i js!!
 

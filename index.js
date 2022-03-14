@@ -19,10 +19,11 @@ app.get("/", (req, res) => {
 //get user input from search bar
 app.post("/search", (req, res) => {
   req.body;
-  //console.log(req.body);
-  const result = searchHandler.search(req.body.input)
+  console.log("from express: " + req.body.userInput);
+  //const result = searchHandler.search(req.body.inputString);
 
-  res.send(result);
+  //res.send(result);
+  res.send(req.body.userInput);
 });
 
 app.listen(port, hostname, () => {
