@@ -1,0 +1,10 @@
+1. får ordning på projektets struktur
+backend node.js, javascript?
+
+2.räcker med en html som visar en searchbar och knapp
+
+3. Ladda datan från articles.json filen (till string eller array?)
+
+
+!!om backend strular, se till att i alla fall ha en fungerande search-funktion i js!!
+
