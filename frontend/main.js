@@ -34,7 +34,8 @@ const getResults = async (userInput) => {
 
 //create elements to display results
 const createResultsList = (res) => {
-  //console.log(res);
+  console.log(res);
+
   const li = document.createElement("li");
   li.classList.add("listItem");
 

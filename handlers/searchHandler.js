@@ -1,34 +1,43 @@
 //handle the request for search
-//populate array with articles, search function, return response
 
 const res = require("express/lib/response");
 const articles = require("../assets/articles.json");
 
-//Remove Null values and not of type string
-//not working as I want to yet
+//Remove or sip Null values and not of type string
+//not working, it removes the whole object when it finds null
+/*
 let list = articles.filter((article) => {
-  for (let value in article) {
-    //console.log(value) //properties
-    if (typeof article[value] !== "string" && article[value] === null) {
-      //need to remove property containing null or not string
+  for (let key in article) {
+    //console.log(key); //properties
+    if (article[key] === null) {
+      //console.log(article[key]);
+      //delete key;
       return false;
+      //continue;
     }
   }
   return true;
-});
+});*/
+
+//from stackOverflow...Returns a new object from an iterable of [key, value] pairs.
+let testList = articles.map((obj) =>
+  Object.fromEntries(Object.entries(obj).filter(([k, v]) => v !== null))
+);
 
 const search = (inputString) => {
   console.log("Input: " + inputString);
 
-  function searchByValue(list, inputString) {
-    return list.filter((article) =>
+  //console.log(list.length);
+  //console.log(testList.length);
+
+  function searchByValue(testList, inputString) {
+    return testList.filter((article) =>
       Object.keys(article).some((k) =>
         article[k].toString().toLowerCase().includes(inputString.toLowerCase())
       )
     );
   }
-
-  return searchByValue(list, inputString);
+  return searchByValue(testList, inputString);
 };
 
 module.exports = {
