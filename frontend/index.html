@@ -12,23 +12,26 @@
 </head>
 
 <body>
-  <!--<script type="module" src="./app.js"></script>-->
+  <script type="module" src="./main.js"></script>
   <div class="main">
     <nav class ="nav">
       <h2 class="title">Code test for EC-Solutions</h2>
     </nav>
-    <div>
-    <div class="wrap">
-      <div class="search">
-         <input type="text" class="searchTerm" id="searchInput" autocomplete="off" placeholder="What are you looking for?">
-         <button type="submit" class="searchButton" id="search" onclick="searchFun">
-           <i class="fa fa-search"></i>
-        </button>
-      </div>
-      <ul id="results"></ul>
-   </div>
   
-<script>
+      <div class="search">
+         <input type="text" class="searchTerm" id="searchInput" autocomplete="off" placeholder="What are you looking for?" autofocus>
+         <!--<button type="submit" class="searchButton" id="search" onclick="searchFun">
+           <i class="fa fa-search"></i>
+        </button>-->
+      
+      <div class="showList">
+        <ul class="ul" id="results"></ul>
+      </div>
+    </div>
+
+  </div>
+  
+<!--<script>
   const submitSearch = document.getElementById("searchInput");
   const results = document.getElementById("results");
   let userInput = "";
@@ -42,7 +45,7 @@
   const getResults = async (userInput) => {
     //results.innerHTML = userInput;
 
-    console.log(userInput)
+    //console.log(userInput)
     
     let res = await fetch("http://localhost:3000/search", {
       method: "POST",
@@ -53,13 +56,12 @@
         userInput: userInput
       })
     })
-    .then(res => console.log(res))
-
-
+    .then(res => res.json())
+    .then(data => console.log(data))
   }
   
 
-</script>
+</script>-->
   
 </body>
 </html>
