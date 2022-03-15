@@ -1,3 +1,5 @@
+//Test to create a card for each search result, not finised
+
 const card = document.createElement("div");
 const header = document.createElement("div");
 const container = document.createElement("div");
@@ -11,8 +13,6 @@ header.classList.add("header");
 container.classList.add("container");
 
 const createCard = (article) => {
-  //console.log(article.category);
-  //const categoryText = document.createTextNode(article.category);
   category.innerHTML = article.category;
   header.appendChild(category);
 

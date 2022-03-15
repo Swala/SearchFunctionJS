@@ -3,7 +3,7 @@
 const res = require("express/lib/response");
 const articles = require("../assets/articles.json");
 
-//Remove or skip Null values and not of type string
+//Remove or skip Null values
 //not working, it removes the whole object when it finds null
 /*
 let list = articles.filter((article) => {

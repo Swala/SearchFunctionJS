@@ -36,7 +36,7 @@ body {
   color: #9dbfaf;
 }
 
-.searchTerm:focus {
+.searchTerm {
   color: #00b4cc;
 }
 
@@ -78,7 +78,6 @@ footer {
   border: 3px solid #00b4cc;
   width: 100%;
 }
-
 
 .searchButton {
   width: 40px;

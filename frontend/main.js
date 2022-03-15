@@ -45,9 +45,6 @@ const createResultsList = (res) => {
       li.appendChild(title);
 
       results.appendChild(li);
-
-      //only created one card...
-      //let card = createCard(element);
     });
   } else {
     const li = document.createElement("li");
