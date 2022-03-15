@@ -32,23 +32,26 @@ const getResults = async (userInput) => {
   createResultsList(res);
 };
 
-//create elements to display results
+//create list elements to display results
 const createResultsList = (res) => {
-  console.log(res);
-
-  const li = document.createElement("li");
-  li.classList.add("listItem");
+  console.log(res.length);
 
   if (res.length > 0) {
     res.forEach((element) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      li.classList.add("listItem");
       const title = document.createTextNode(element.title);
       li.appendChild(title);
+      results.appendChild(li);
     });
   } else {
+    const li = document.createElement("li");
+    li.classList.add("listItem");
     const title = document.createTextNode("No results found");
     li.appendChild(title);
+    results.appendChild(li);
   }
-  results.appendChild(li);
 };
 
 document.addEventListener("DOMContentLoaded", submitSearch);
