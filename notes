@@ -1,5 +1,4 @@
-1. får ordning på projektets struktur
-backend node.js, javascript?
+
 
 2.räcker med en html som visar en searchbar och knapp
 
@@ -7,6 +6,8 @@ backend node.js, javascript?
 
 4. check för undefined och null 
 
+Om tid finns: lis item klickbara som visar hela artikel
 
-!!om backend strular, se till att i alla fall ha en fungerande search-funktion i js!!
+
+
 
