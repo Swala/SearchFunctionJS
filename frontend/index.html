@@ -20,48 +20,13 @@
   
       <div class="search">
          <input type="text" class="searchTerm" id="searchInput" autocomplete="off" placeholder="What are you looking for?" autofocus>
-         <!--<button type="submit" class="searchButton" id="search" onclick="searchFun">
-           <i class="fa fa-search"></i>
-        </button>-->
-      
       <div class="showList">
         <ul class="ul" id="results"></ul>
       </div>
     </div>
-
-  </div>
-  
-<!--<script>
-  const submitSearch = document.getElementById("searchInput");
-  const results = document.getElementById("results");
-  let userInput = "";
-
-  submitSearch.addEventListener("input", (e) => {
-    userInput = e.target.value;
-    //console.log(userInput);
-    getResults(userInput);
-  })
-
-  const getResults = async (userInput) => {
-    //results.innerHTML = userInput;
-
-    //console.log(userInput)
     
-    let res = await fetch("http://localhost:3000/search", {
-      method: "POST",
-      headers: {
-            "Content-Type": "application/json"
-          },
-      body: JSON.stringify({
-        userInput: userInput
-      })
-    })
-    .then(res => res.json())
-    .then(data => console.log(data))
-  }
-  
-
-</script>-->
+  </div>
+  <footer>By: Sandra Wahlgren</footer>
   
 </body>
 </html>

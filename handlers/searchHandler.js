@@ -3,7 +3,7 @@
 const res = require("express/lib/response");
 const articles = require("../assets/articles.json");
 
-//Remove or sip Null values and not of type string
+//Remove or skip Null values and not of type string
 //not working, it removes the whole object when it finds null
 /*
 let list = articles.filter((article) => {
@@ -20,24 +20,21 @@ let list = articles.filter((article) => {
 });*/
 
 //from stackOverflow...Returns a new object from an iterable of [key, value] pairs.
-let testList = articles.map((obj) =>
+let listWithoutNull = articles.map((obj) =>
   Object.fromEntries(Object.entries(obj).filter(([k, v]) => v !== null))
 );
 
 const search = (inputString) => {
-  console.log("Input: " + inputString);
+  //console.log(listWithoutNull.length);
 
-  //console.log(list.length);
-  //console.log(testList.length);
-
-  function searchByValue(testList, inputString) {
-    return testList.filter((article) =>
+  function searchByValue(listWithoutNull, inputString) {
+    return listWithoutNull.filter((article) =>
       Object.keys(article).some((k) =>
         article[k].toString().toLowerCase().includes(inputString.toLowerCase())
       )
     );
   }
-  return searchByValue(testList, inputString);
+  return searchByValue(listWithoutNull, inputString);
 };
 
 module.exports = {

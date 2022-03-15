@@ -1,15 +1,16 @@
+//import createCard from "./card.js";
 const submitSearch = document.getElementById("searchInput");
 const results = document.getElementById("results");
-let userInput = "";
 
 submitSearch.addEventListener("keyup", (e) => {
-  userInput = e.target.value;
-  getResults(userInput);
+  e.preventDefault();
+  e.target.value === null || e.target.value.length < 3
+    ? (results.innerHTML = "")
+    : getResults(e.target.value);
 });
 
 //fetch results
 const getResults = async (userInput) => {
-  //results.innerHTML = userInput;
   results.innerHTML = "";
 
   let res = await fetch("http://localhost:3000/search", {
@@ -34,16 +35,19 @@ const getResults = async (userInput) => {
 
 //create list elements to display results
 const createResultsList = (res) => {
-  console.log(res.length);
+  //console.log(res.length);
 
   if (res.length > 0) {
     res.forEach((element) => {
       const li = document.createElement("li");
-      const a = document.createElement("a");
       li.classList.add("listItem");
       const title = document.createTextNode(element.title);
       li.appendChild(title);
+
       results.appendChild(li);
+
+      //only created one card...
+      //let card = createCard(element);
     });
   } else {
     const li = document.createElement("li");

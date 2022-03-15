@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index");
 });
 
-//get user input from search bar
+//handle post req from search bar
 app.post("/search", (req, res) => {
   req.body;
   console.log("from express: " + req.body.userInput);

@@ -3,6 +3,7 @@
 body {
   background: #dbe2f0;
   font-family: "Open Sans", sans-serif;
+  display: flex;
 }
 
 .main {
@@ -14,10 +15,6 @@ body {
 .title {
   text-align: center;
   color: #018da0;
-}
-
-.test {
-  position: relative;
 }
 
 .search {
@@ -63,7 +60,26 @@ body {
   width: auto;
 }
 
+footer {
+  background-color: transparent;
+  margin-top: -0.5em;
+  padding: 2em;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  color: #018da0;
+}
+
 /*
+.card {
+  color: #00b4cc;
+  width: auto;
+  border: 3px solid #00b4cc;
+  width: 100%;
+}
+
+
 .searchButton {
   width: 40px;
   height: 36px;
@@ -74,13 +90,4 @@ body {
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
-}*/
-
-/*
-.wrap {
-  width: 50%;
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }*/
